@@ -41,3 +41,31 @@ Add a new feature to the system so that Conjured items can be sold. Conjured ite
 
 2. updateQuality function
   - Starts with a for loop that goes through the items array
+  - If statements are triggered with different treatments for specific items, namely: "Aged Brie", "Backstage passes to a TAFKAL80ETC concert" and "Sulfuras, Hand of Ragnaros".
+
+### Feature testing
+
+// Run node
+$ node
+
+// Require the script
+const {Shop, Item} = require("./src/gilded_rose");
+
+// Define items
+let banana = new Item("banana", 50, 50)
+let brie = new Item("Aged Brie", 45, 45)
+let backstagePasses = new Item("Backstage passes to a TAFKAL80ETC concert", 40, 40)
+let sulfuras = new Item("Sulfuras, Hand of Ragnaros", 60, 60)
+let apple = new Item("apple", 20, 20)
+
+// Create shop
+const gildedRose = new Shop([banana, brie, backstagePasses, sulfuras, apple])
+
+// Pass some days by running the updateQuality function
+gildedRose.updateQuality()
+gildedRose.updateQuality()
+
+// Results
+// Quality and sellIn for banana and apple decrease by 2
+// Quality for brie and backstagePasses increases by 2, sellIn decreases by 2
+// Quality and sellIn for sulfuras does not change
