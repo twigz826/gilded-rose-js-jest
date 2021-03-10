@@ -32,4 +32,12 @@ Add a new feature to the system so that Conjured items can be sold. Conjured ite
 
 ## Planning
 
-1. Understand the code and what it's currently doing
+### Understand the code and what it's currently doing
+
+1. General overview
+  - Item class creates a new item with three values on initialisation: name, sellIn and quality
+  - Items can then be added to the shop class and are stored in an array called "items"
+  - updateQuality is a big function that must be run every day to update the values for sellIn and quality
+
+2. updateQuality function
+  - Starts with a for loop that goes through the items array

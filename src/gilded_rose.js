@@ -61,6 +61,8 @@ class Shop {
   }
 }
 
+console.log("Hello World");
+
 module.exports = {
   Item,
   Shop
