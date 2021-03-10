@@ -55,17 +55,20 @@ const {Shop, Item} = require("./src/gilded_rose");
 let banana = new Item("banana", 50, 50)
 let brie = new Item("Aged Brie", 45, 45)
 let backstagePasses = new Item("Backstage passes to a TAFKAL80ETC concert", 40, 40)
-let sulfuras = new Item("Sulfuras, Hand of Ragnaros", 60, 60)
+let sulfuras = new Item("Sulfuras, Hand of Ragnaros", 80, 80)
 let apple = new Item("apple", 20, 20)
+let veryRipePear = new Item("pear", 1, 20)
 
 // Create shop
-const gildedRose = new Shop([banana, brie, backstagePasses, sulfuras, apple])
+const gildedRose = new Shop([banana, brie, backstagePasses, sulfuras, apple, veryRipePear])
 
-// Pass some days by running the updateQuality function
+// Allow two days to pass by running the updateQuality function
 gildedRose.updateQuality()
 gildedRose.updateQuality()
 
 // Results
-// Quality and sellIn for banana and apple decrease by 2
-// Quality for brie and backstagePasses increases by 2, sellIn decreases by 2
-// Quality and sellIn for sulfuras does not change
+Quality and sellIn for banana and apple decrease by 2
+Quality for brie and backstagePasses increases by 2, sellIn decreases by 2
+Quality and sellIn for sulfuras does not change
+SellIn for veryRipePear descreases to -1 and then Quality decreases by 3
+Quality has a max of 50 and a min of 0
