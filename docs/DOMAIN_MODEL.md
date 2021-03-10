@@ -42,6 +42,7 @@ Add a new feature to the system so that Conjured items can be sold. Conjured ite
 2. updateQuality function
   - Starts with a for loop that goes through the items array
   - If statements are triggered with different treatments for specific items, namely: "Aged Brie", "Backstage passes to a TAFKAL80ETC concert" and "Sulfuras, Hand of Ragnaros".
+  - See Comments in the code to understand what each line of the function does
 
 ### Feature testing
 
