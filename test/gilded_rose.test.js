@@ -25,4 +25,13 @@ describe("Gilded Rose", () => {
 
   });
 
+  describe("brie", () => {
+
+    it("quality should increase as sellIn value decreases", () => {
+      const gildedRose = new Shop([new Item("Aged Brie", 10, 10)]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].sellIn).toBe(9);
+      expect(items[0].quality).toBe(11);
+    });
+  });
 });
