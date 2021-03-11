@@ -44,6 +44,9 @@ Add a new feature to the system so that Conjured items can be sold. Conjured ite
   - If statements are triggered with different treatments for specific items, namely: "Aged Brie", "Backstage passes to a TAFKAL80ETC concert" and "Sulfuras, Hand of Ragnaros".
   - See Comments in the code to understand what each line of the function does
 
+3. Unexpected finding about Aged Brie not clearly stated in the instructions
+  - Aged Brie quality goes up by 2 each time once the sellIn value drops below 0
+
 ### Writing tests to confirm understanding of core functionality
 
 1. First tests will confirm behaviour of normal items sold at the inn
@@ -63,24 +66,11 @@ $ node
 // Require the script
 const {Shop, Item} = require("./src/gilded_rose");
 
-// Define items
-let banana = new Item("banana", 50, 50)
-let brie = new Item("Aged Brie", 45, 45)
-let backstagePasses = new Item("Backstage passes to a TAFKAL80ETC concert", 40, 40)
-let sulfuras = new Item("Sulfuras, Hand of Ragnaros", 80, 80)
-let apple = new Item("apple", 20, 20)
-let veryRipePear = new Item("pear", 1, 20)
-
 // Create shop
-const gildedRose = new Shop([banana, brie, backstagePasses, sulfuras, apple, veryRipePear])
+const gildedRose = new Shop([new Item("Aged Brie", 2, 0)]);
 
-// Allow two days to pass by running the updateQuality function
-gildedRose.updateQuality()
+// Allow a day to pass by running the updateQuality function
 gildedRose.updateQuality()
 
 // Results
-Quality and sellIn for banana and apple decrease by 2
-Quality for brie and backstagePasses increases by 2, sellIn decreases by 2
-Quality and sellIn for sulfuras does not change
-SellIn for veryRipePear descreases to -1 and then Quality decreases by 3
-Quality has a max of 50 and a min of 0
+[ Item { name: 'Aged Brie', sellIn: 1, quality: 1 } ]
