@@ -44,6 +44,17 @@ Add a new feature to the system so that Conjured items can be sold. Conjured ite
   - If statements are triggered with different treatments for specific items, namely: "Aged Brie", "Backstage passes to a TAFKAL80ETC concert" and "Sulfuras, Hand of Ragnaros".
   - See Comments in the code to understand what each line of the function does
 
+### Writing tests to confirm understanding of core functionality
+
+1. First tests will confirm behaviour of normal items sold at the inn
+2. Next tests will test behaviour of items with special rules, being brie and backstage passes
+3. Next tests will examine sulfuras and ensure behaviour is in line with expectations based on the flow diagrams
+4. Finally, tests can be written to test for the new item to be sold at the inn
+
+### Refactoring
+
+After writing tests to confirm the existing behaviour of the program (point 3 in the previous section), I will begin to refactor the code one category at a time, using my tests to inform where errors are occuring as well as allowing me to make changes that do not interfere with the core functionality of the program. Once I am happy with the refactored code, I will move on to point 4.
+
 ### Feature testing
 
 // Run node

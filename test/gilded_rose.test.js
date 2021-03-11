@@ -14,4 +14,5 @@ describe("Gilded Rose", () => {
     expect(items[0].sellIn).toBe(-2);
     expect(items[0].quality).toBe(18);
   });
+
 });
