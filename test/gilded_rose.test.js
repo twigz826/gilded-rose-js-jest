@@ -55,5 +55,11 @@ describe("Gilded Rose", () => {
       const items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(17);
     });
+
+    it("quality should increase by 3 where 0 < sellIn value <= 5", () => {
+      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 15)]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toBe(18);
+    });
   });
 });
